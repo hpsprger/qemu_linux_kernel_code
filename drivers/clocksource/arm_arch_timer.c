@@ -647,7 +647,7 @@ static __always_inline irqreturn_t timer_handler(const int access,
 	return IRQ_NONE;
 }
 
-static irqreturn_t arch_timer_handler_virt(int irq, void *dev_id)
+static irqreturn_t  __attribute__((optimize("O0")))  arch_timer_handler_virt(int irq, void *dev_id)
 {
 	struct clock_event_device *evt = dev_id;
 
